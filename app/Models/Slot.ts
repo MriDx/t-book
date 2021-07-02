@@ -1,6 +1,5 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column, hasMany, HasOne, hasOne } from '@ioc:Adonis/Lucid/Orm'
-import TeacherSlot from './TeacherSlot';
+import { BaseModel, column, HasOne, hasOne } from '@ioc:Adonis/Lucid/Orm'
 import SlotTiming from './SlotTiming';
 
 export default class Slot extends BaseModel {

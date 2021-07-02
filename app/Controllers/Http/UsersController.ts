@@ -16,7 +16,7 @@ export default class UsersController {
   public async store ({}: HttpContextContract) {
   }
 
-  public async show({ auth, response }: HttpContextContract) {
+  public async show({ auth }: HttpContextContract) {
     return await auth.use('api').authenticate()
   }
 
