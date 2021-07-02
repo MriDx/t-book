@@ -45,4 +45,6 @@ Server.middleware.registerNamed({
   auth: 'App/Middleware/Auth',
   admin: 'App/Middleware/Admin',
   teacher: 'App/Middleware/Teacher',
+  student: 'App/Middleware/Student',
+  adminteacher: 'App/Middleware/AdminTeacher',
 })

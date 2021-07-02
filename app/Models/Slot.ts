@@ -34,4 +34,6 @@ export default class Slot extends BaseModel {
   public timing: HasOne<typeof SlotTiming>
 
 
+
+
 }

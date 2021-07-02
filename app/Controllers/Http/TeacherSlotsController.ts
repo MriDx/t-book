@@ -32,4 +32,13 @@ export default class TeacherSlotsController {
   public async destroy ({}: HttpContextContract) {
   }
 
+  public async myslots({ auth }: HttpContextContract) {
+    const user = await auth.use('api').authenticate()
+    return await TeacherSlot.query()
+      .where('user_id', user.id)
+      .preload('requests')
+  }
+
+
+
 }

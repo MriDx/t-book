@@ -1,7 +1,8 @@
 import { DateTime } from 'luxon'
-import { BaseModel, BelongsTo, belongsTo, column, HasOne, hasOne } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, BelongsTo, belongsTo, column, HasMany, hasMany, HasOne, hasOne } from '@ioc:Adonis/Lucid/Orm'
 import Slot from './Slot'
 import User from './User'
+import BookRequest from './BookRequest'
 
 export default class TeacherSlot extends BaseModel {
   @column({ isPrimary: true })
@@ -41,6 +42,12 @@ export default class TeacherSlot extends BaseModel {
     foreignKey: 'user_id'
   })
   public user: BelongsTo<typeof User>
+
+  @hasMany(() => BookRequest, {
+    localKey: 'id',
+    foreignKey: 'teacher_slot_id'
+  })
+  public requests: HasMany<typeof BookRequest>
 
 
 
