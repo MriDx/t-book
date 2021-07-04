@@ -37,7 +37,9 @@ Route.group(() => {
 
 
   Route.post('slot/create', 'SlotsController.create').middleware(['admin'])
+  Route.get('slots', 'SlotsController.index').middleware(['admin'])
   Route.post('slot/timing/create', 'SlotTimingsController.create').middleware(['admin'])
+  Route.get('slot/timings', 'SlotTimingsController.index').middleware(['admin'])
 
   Route.post('slot/add', 'TeacherSlotsController.create').middleware(['admin'])
 
@@ -56,6 +58,8 @@ Route.group(() => {
   Route.put('slot/action', 'BookRequestsController.action').middleware(['adminteacher'])
 
   Route.get('my_requests', 'BookRequestsController.myrequests').middleware(['student'])
+
+
 
 }).prefix('api/v1')
 

@@ -2,7 +2,8 @@ import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import SlotTiming from 'App/Models/SlotTiming'
 
 export default class SlotTimingsController {
-  public async index ({}: HttpContextContract) {
+  public async index({ }: HttpContextContract) {
+    return SlotTiming.all()
   }
 
   public async create({ request, response }: HttpContextContract) {

@@ -3,7 +3,10 @@ import Slot from 'App/Models/Slot'
 import SlotCreateValidator from 'App/Validators/SlotCreateValidator'
 
 export default class SlotsController {
-  public async index ({}: HttpContextContract) {
+  public async index({ }: HttpContextContract) {
+    return await Slot.query()
+      .preload('timing')
+
   }
 
   public async create({ request, auth, response }: HttpContextContract) {
