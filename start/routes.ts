@@ -53,11 +53,15 @@ Route.group(() => {
   Route.get('slot/requests/rejected', 'BookRequestsController.rejected').middleware(['admin'])
 
   Route.get('my_slots', 'TeacherSlotsController.myslots').middleware(['teacher'])
+  Route.get('my_slot/:id', 'TeacherSlotsController.myslot').middleware(['teacher'])
 
 
   Route.put('slot/action', 'BookRequestsController.action').middleware(['adminteacher'])
 
   Route.get('my_requests', 'BookRequestsController.myrequests').middleware(['student'])
+
+
+  Route.get('user/:id', 'UsersController.user')
 
 
 

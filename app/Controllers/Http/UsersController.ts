@@ -86,4 +86,17 @@ export default class UsersController {
     })
   }
 
+  public async user({ params: { id }, response }: HttpContextContract) {
+    try {
+      return await User.query()
+        .where('id', id)
+        .select(['id', 'name', 'email'])
+        .preload('student_details')
+        .firstOrFail()
+    } catch (error) {
+    }
+    return response.status(404).json({status: 'not found'})
+
+  }
+
 }

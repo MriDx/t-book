@@ -7,6 +7,7 @@ import BookRequest from './BookRequest';
 import StudentDetail from './StudentDetail';
 
 export default class User extends BaseModel {
+
   @column({ isPrimary: true })
   public id: number
 
@@ -61,6 +62,15 @@ export default class User extends BaseModel {
   })
   public student_details: HasOne<typeof StudentDetail>
 
+
+  public async toPublic() {
+    return {
+      id: this.id,
+      name: this.name,
+      email: this.email,
+      details: this.student_details
+    }
+  }
 
 
 
